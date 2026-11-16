@@ -1,5 +1,5 @@
 
-name: Test Self Hosted Runner
+name: Deploy HTML Website
 
 on:
   push:
@@ -7,12 +7,12 @@ on:
       - main
 
 jobs:
-  test:
+  deploy:
     runs-on: self-hosted
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Test runner
-        run: echo "GitHub Actions Runner is working!"
+      - name: Deploy website
+        run: cp index.html /var/www/html/index.html
